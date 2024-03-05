@@ -1,0 +1,75 @@
+.loading{
+    background-color: aqua;
+    display: flex;
+    align-items:center;
+    justify-content: space-around;
+    transition: transform 0.3s ease-in-out;
+}
+.spans{
+    font-size: larger;
+    font-style: italic;
+    padding-right: 20px;
+}
+
+
+
+  .notification-s {
+   padding: auto;
+    position: fixed;
+    top: -100px; /* Initially hide the notification above the viewport */
+    left: 50%;
+    transform: translateX(-50%); /* Center the notification horizontally */
+    background-color: #25bc40;
+    color: #fff;
+    padding: 16px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    opacity: 0; /* Initially set opacity to 0 */
+    animation: dropIn 0.5s ease-in-out forwards;
+  }
+  
+  @keyframes dropIn {
+    0% {
+      top: -100px; /* Start from above the viewport */
+      opacity: 0;
+    }
+    75% {
+      top: 50px; /* Drop slightly below the final position */
+      opacity: 1;
+    }
+    100% {
+      top: 30px; /* Final position */
+      opacity: 1;
+    }
+  }
+  .notification-e {
+    padding: auto;
+     position: fixed;
+     top: -100px; /* Initially hide the notification above the viewport */
+     left: 50%;
+     transform: translateX(-50%); /* Center the notification horizontally */
+     background-color: #c80f0f;
+     color: #fff;
+     padding: 16px;
+     border-radius: 4px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+     opacity: 0; /* Initially set opacity to 0 */
+     animation: dropIn 0.5s ease-in-out forwards;
+   }
+   
+   @keyframes dropIn {
+     0% {
+       top: -100px; /* Start from above the viewport */
+       opacity: 0;
+     }
+     75% {
+       top: 50px; /* Drop slightly below the final position */
+       opacity: 1;
+     }
+     100% {
+       top: 30px; /* Final position */
+       opacity: 1;
+     }
+   }
+
+  

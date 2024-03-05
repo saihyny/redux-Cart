@@ -7,7 +7,6 @@ const CartItem = (props) => {
   const { title, quantity, total, price } = props.item;
   const items = useSelector((state)=>state.cart.items)
 
-  console.log(items)
   return (
     items.map((item)=>(
       <li className={classes.item} key={item.id}>

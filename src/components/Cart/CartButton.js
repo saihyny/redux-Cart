@@ -3,7 +3,7 @@ import {useSelector,useDispatch} from 'react-redux'
 import {isCartOpen} from '../../Store/ui-slice'
 const CartButton = (props) => {
   const totalItems = useSelector((state)=>state.cart.totalQuantity)
-  console.log(totalItems)
+  
   const dispatch = useDispatch()
   const toggelFunc = ()=>{
     dispatch(isCartOpen())
