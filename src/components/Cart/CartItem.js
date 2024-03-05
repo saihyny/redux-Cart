@@ -1,27 +1,36 @@
 import classes from './CartItem.module.css';
-
+import { useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { addItemToCart, removeItemFromCart } from '../../Store/cart-slice';
 const CartItem = (props) => {
+  const dispatch = useDispatch()
   const { title, quantity, total, price } = props.item;
+  const items = useSelector((state)=>state.cart.items)
 
+  console.log(items)
   return (
-    <li className={classes.item}>
+    items.map((item)=>(
+      <li className={classes.item} key={item.id}>
       <header>
-        <h3>{title}</h3>
+        <h3>{item.title}</h3>
         <div className={classes.price}>
-          ${total.toFixed(2)}{' '}
-          <span className={classes.itemprice}>(${price.toFixed(2)}/item)</span>
+          ${item.total}{' '}
+          <span className={classes.itemprice}>(${item.price.toFixed(2)}/item)</span>
         </div>
       </header>
       <div className={classes.details}>
         <div className={classes.quantity}>
-          x <span>{quantity}</span>
+          x <span>{item.quantity}</span>
         </div>
         <div className={classes.actions}>
-          <button>-</button>
-          <button>+</button>
+          <button onClick={()=>dispatch(removeItemFromCart(item.id))}>-</button>
+          <button onClick={()=>{
+            dispatch(addItemToCart(item))
+          }}>+</button>
         </div>
       </div>
     </li>
+    ))
   );
 };
 
